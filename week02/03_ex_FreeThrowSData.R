@@ -34,9 +34,11 @@ KevinDurant_FT <- c(209,209,391,452,756,594,431,679,703,146)
 DerrickRose_FT <- c(146,146,146,197,259,476,194,0,27,152)
 DwayneWade_FT <- c(629,432,354,590,534,494,235,308,189,284)
 #Matrix
-#
-# <put your code here>
-#
+FreeThrows <- rbind(KobeBryant_FT, JoeJohnson_FT, LeBronJames_FT,
+                    CarmeloAnthony_FT, DwightHoward_FT,ChrisBosh_FT,
+                    ChrisPaul_FT,KevinDurant_FT,DerrickRose_FT,
+                    DwayneWade_FT)
+
 
 #Free Throw Attempts
 KobeBryant_FTA <- c(819,768,742,564,541,583,451,626,21,241)
@@ -50,6 +52,11 @@ KevinDurant_FTA <- c(256,256,448,524,840,675,501,750,805,171)
 DerrickRose_FTA <- c(205,205,205,250,338,555,239,0,32,187)
 DwayneWade_FTA <- c(803,535,467,771,702,652,297,425,258,370)
 #Matrix
-#
-# <put your code here>
-#
+FreeThrowAttempts <- rbind(KobeBryant_FTA,JoeJohnson_FTA,
+                           LeBronJames_FTA,CarmeloAnthony_FTA,
+                           DwightHoward_FTA,ChrisBosh_FTA,
+                           ChrisPaul_FTA, KevinDurant_FTA,
+                           DerrickRose_FTA,DwayneWade_FTA)
+
+
+

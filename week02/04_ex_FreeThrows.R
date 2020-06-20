@@ -10,18 +10,26 @@ ChrisPaul_FT
 KevinDurant_FT
 DerrickRose_FT
 DwayneWade_FT
-
-
-FreeThrows <- 
-  
-  
 # 2. 이제 위의 개인별 벡터들은 필요 없으니, 메모리에서 삭제합니다.
+rm(KobeBryant_FT,
+   JoeJohnson_FT,
+   LeBronJames_FT,
+   CarmeloAnthony_FT,
+   DwightHoward_FT,
+   ChrisBosh_FT,
+   ChrisPaul_FT,
+   KevinDurant_FT,
+   DerrickRose_FT,
+   DwayneWade_FT)
 
+# 3. 위 행렬의 행과 열에 이름을 붙여줍니다. 
+# 행은 사람이름(Players), 
+# 열은 시즌년도(Seasons)로 합니다.
+FreeThrows
+rownames(FreeThrows)  <- Players
+colnames(FreeThrows)  <- Seasons
 
-
-# 3. 위 행렬의 행과 열에 이름을 붙여줍니다. 행은 사람이름(Players), 열은 시즌년도(Seasons)로 합니다.
-
-  
+FreeThrows
 
 
 # 4. 아래 자유투 시도에 대한벡터도 있습니다. 이를 row 행렬로 만듭니다.
@@ -34,17 +42,22 @@ ChrisPaul_FTA
 KevinDurant_FTA
 DerrickRose_FTA
 DwayneWade_FTA
-
-FreeThrowAttempts <- 
   
   
 # 5. 필요 없는 벡터는 메모리에서 삭제.
+rm(KobeBryant_FTA,
+   JoeJohnson_FTALeBronJames_FTA,
+   CarmeloAnthony_FTA,
+   DwightHoward_FTA,
+   ChrisBosh_FTA,
+   ChrisPaul_FTA,
+   KevinDurant_FTA,
+   DerrickRose_FTA,
+   DwayneWade_FTA)
 
-  
-  
 # 6. 위의 행렬에서 행은 사람이름(Players), 열은 년도(Seasons)를 네이밍 합니다.
-
-  
+rownames(FreeThrowAttempts) <- Players
+colnames(FreeThrowAttempts) <- Seasons  
   
   
 # 다음의 차트 함수를 이용할 것입니다.(차트는 나중에 자세히 배움.)
@@ -59,10 +72,11 @@ myplot(FreeThrowAttempts)
 
 # 7. Free Throw Attempts Per Game (게임당 자유투) 를 비주얼라이징 하세요.
 
-
+myplot(FreeThrowAttempts/Games)
 
 
 # 8. Free Throw Accuracy (자유투 정확도) 를 비주얼라이징 하세요.
 
+myplot( FreeThrows /FreeThrowAttempts )
 
 
