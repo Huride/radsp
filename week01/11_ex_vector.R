@@ -32,23 +32,33 @@ profit.margiin <- round(profit.margiin, 2)
 profit.margiin
 
 # 2019년도 세후 수익은 얼마인지 평균을 구하세요.
-mean(profit.after.tax)
-
+avg <- mean(profit.after.tax)
 
 # 월별로, 평균수익 이상으로 수익을 낸 월을 찾으세요.
+names(profit.after.tax) <- 1:12
 
+profit.after.tax
 
+filter <- profit.after.tax >= avg
+profit.after.tax[ filter  ]
 
 # 반대로, 평균수익 이상 내지 못한 월들을 찾으세요.
+filter2 <- profit.after.tax < avg
+profit.after.tax[ filter2 ]
 
+filter3 <- !filter
+profit.after.tax[ filter3 ]
 
 
 # 세후 수익이 가장 좋은 달은 몇월입니까?
+max.profit <- max(profit.after.tax)  # 8140.64
 
+filter <- profit.after.tax == max.profit
 
+profit.after.tax[ filter ]
 
 # 세후 수익이 가장 나쁜달은 몇월입니까?
 
-
-
-
+min.profit <- min(profit.after.tax)
+filter <- profit.after.tax == min.profit
+profit.after.tax[ filter ]
