@@ -4,14 +4,32 @@
 
 x <- 1
 
-# 2. x 가 짝수면 "Even Number" 를 출력하고, 홀수면  "Not Even"을 출력하는 코드 작성.
+if(x == 1) {
+  print('Hello')
+}
+
+# 2. x 가 짝수면 "Even Number" 를 출력하고, 
+# 홀수면  "Not Even"을 출력하는 코드 작성.
+
 x <- 3 # Change x to test
 
+if ( x %% 2 == 0 ){
+  print("Even Number")
+} else {
+  print("Not Even")
+}
 
-# 3. 변수 x 가 행렬이면 'Is a Matrix' 출력하고, 그렇제 않으면 "Not a Matrix" 출력
+
+# 3. 변수 x 가 행렬이면 'Is a Matrix' 출력하고, 
+# 그렇제 않으면 "Not a Matrix" 출력
 
 x <- matrix()
 
+if ( is.matrix(x) ){
+  print("Is a Matrix")
+}else{
+  print("Not a Matrix")
+}
 
 
 # 4.유저한테 점수를 입력받아서,
@@ -21,14 +39,45 @@ x <- matrix()
 
 # hint : 유저 입력은 readline 함수 이용.
 # http://www.rexamples.com/4/Reading%20user%20input
+?readline
 
+score <- readline(prompt = "점수 입력 : ")
+score <- as.numeric(score)
 
+if(score < 0 | score > 100){
+  print("잘못입력하셨습니다.")
+}else if(score >= 80){
+  print("A학점입니다.")
+}else {
+  print('B학점입니다.')
+}
 
 
 # 5. 3개의 원소를 가진 벡터가 있을때, 조건문을 사용하여, 최대값을 출력하세요.
 # 예) v <- c(5,22,13)  이면, 22를 출력하고
 # 예) v <- c(15,7,11)  이면, 15를 출력하고
 # 예) v <- c(18,17,42)  이면, 42를 출력
+
+v <- c(15,27,41)
+
+v[1]
+v[2]
+v[3]
+
+if ( v[1] > v[2] & v[1] > v[3]){
+  print(v[1])
+} else if ( v[2] > v[3] ){
+  print(v[2])
+} else {
+  print( v[3])
+}
+
+
+
+
+
+
+
 
 
 

@@ -7,31 +7,33 @@ getwd()
 
 # 2. 파일('demographic-data.csv')을 읽어서 변수에 저장하기.
 
-data <-  
+data <-  read.csv('demographic-data.csv')
   
-  
+
 
 # 3. 기본적인 데이터 확인하기. (데이터 확인하는 기본 함수 4개 할용)
-
-  
+head(data)
+str(data)  
   
 
 # 4. Year (년도) 컬럼의 값을 카테고리화 하여 사용하려 합니다.
 # 즉 년도별로 데이터를 처리하기 위해서, 년도가 몇개로 되어있는지확인하세요.
+data$Year <- as.factor(data$Year)
 
+levels(data$Year)
 
-
+levels(as.factor(data$Region))
 
 
 # 5. 이제, 년도값이 1960년도인 데이터와, 년도값이 2013년인 데이터.
 # 이렇게 두개의 데이터프레임을 만드세요.
 
-data1960 <-  
-data2013 <-  
+data1960 <- data[ data$Year == 1960  ,   ]
+data2013 <- data[ data$Year == 2013 ,  ]  
 
 # 6. 각각의 데이터프레임은 몇개의 데이터(행)를 가지고 있는지 확인하세요.
-
-  
+nrow(data1960)
+nrow(data2013)  
 
 # 7. '03_1_CountryRegionVectors.R' 파일을 열어서, 3개의 벡터를 메모리에 올리세요.
 # 코드 작성 없습니다. 
@@ -42,38 +44,45 @@ data2013 <-
 # 컬럼명 :           Code ,     Life.Exp 
 # 위 컬럼의 데이터 : Country_Code, Life_Expectancy_At_Birty_1960
 
-add1960 <- 
+add1960 <- data.frame(Code = Country_Code, 
+                      Life.Exp = Life_Expectancy_At_Birth_1960) 
 
+head(add1960)
 
 # 9. 다음 데이터 프레임을 만듭니다. 
 # 데이터프레임 이름 : add2013
 # 컬럼명 :           Code ,     Life.Exp 
 # 위 컬럼의 데이터 : Country_Code, Life_Expectancy_At_Birty_2013
 
-add2013 <- 
+add2013 <- data.frame(Code = Country_Code,
+                      Life.Exp = Life_Expectancy_At_Birth_2013)
   
 
 # 10. 위의 두 데이터프레임을 서머리 해 보세요.
-
-  
+summary(add1960)
+summary(add2013)  
 
 # 10. data1960과, add1960 두 데이터프레임을 합쳐서 merged1960 으로 만듭니다. 
 # (국가코드로 합치면 됩니다.)
 # 마찬가지로 data2013과 add2013 두 데이터프레임을 merged2013으로 합칩니다.
-
-merged1960 <- 
+colnames(data1960)
+colnames(add1960)
+merged1960 <- merge(data1960, add1960, 
+                    by.x = "Country.Code", by.y = "Code")
   
-merged2013 <- 
+merged2013 <- merge(data2013, add2013, 
+                    by.x = "Country.Code", by.y = "Code")
 
 # 11. 각각 구조를 확인해 보세요.
-
-
+str(merged1960)
+str(merged2013)
 # 12. 이제 필요없는 컬럼인 Year 컬럼을 지웁니다. 
 # 위의 두 데이터프레임 각각  Year 를 지우세요.
-
-
+merged1960$Year <- NULL
+merged2013$Year <- NULL
 
 # 13. ggplot2 라이브러리를 사용하겠습니다. (아래 실행하세요.)
+install.packages('ggplot2')
 library(ggplot2)
 
 
