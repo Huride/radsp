@@ -49,7 +49,10 @@ df
 
 ## 라이브러리 설치 : 엑셀 저장.
 install.packages('xlsx')
+
 library(xlsx)
+
+
 write.xlsx(df, "putput.xlsx")
 
 
