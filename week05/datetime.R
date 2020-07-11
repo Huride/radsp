@@ -77,13 +77,14 @@ my.stock$month <- format( my.stock$my.date , format = "%m월")
 
 
 
-my.date <- c("20/07/02", "20/08/12", "20/07/14",
-             "20/09/22")
+my.date <- c("20년07월02일", "20년08월12일", 
+             "20년07월14일", "20년09월22일")
 stock <- c(234, 567, 123, 333)
 
 new.df <- data.frame(my.date, stock)
 
-new.df$iso <- as.Date( new.df$my.date , format = "%y/%m/%d")
+new.df$iso <- as.Date( new.df$my.date , format = "%y년%m월%d일")
+
 
 
 
