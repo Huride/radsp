@@ -7,62 +7,77 @@ mov <- read.csv("21_ex-movie-Data.csv")
 
 
 # 0. 데이터 먼저 파악하기.
+summary(mov)
 
+filter <- mov$Budget...mill. == min(mov$Budget...mill.)
 
-# 1. 무슨요일에 많은지, 요일별로 데이터를 카운팅하여 바 플롯으로 나타낸다.
+colnames(mov)
 
+mov[ filter,  c("Movie.Title" ) ]
+
+filter <- mov$IMDb.Rating == max(mov$IMDb.Rating)
+
+mov[ filter, c("Movie.Title", "Release.Date")]
+
+# 1. 무슨요일에 많은지, 
+# 요일별로 데이터를 카운팅하여 바 플롯으로 나타낸다.
+ggplot(data = mov, aes(x=Day.of.Week)) + geom_bar()
 
 
 # 2. 장르는 'action', 'adventure', 'animation', 'comedy','drama' 인 데이터만 다루겠습니다. 
 # filt 라는 변수 사용.
+str(mov)
+library(dplyr)
+distinct(select(mov, Genre))
 
-
+filt <- mov$Genre %in% c('action', 'adventure', 'animation', 'comedy','drama')
 
 # 3. 스튜디오는 'Buena vista Studios', 'WB', 'Fox', 'Universal', 'Sony', 'Paramount Pictures' 
 # 가  들어있는 데이터만 다루겠습니다.
 # filt2 라는 변수 사용.
 
-
+filt2 <- mov$Studio %in% c('Buena vista Studios', 'WB', 'Fox', 'Universal', 'Sony', 'Paramount Pictures')
 
 # 4. 위의 두 조건 filt, filt2 를 만족하는 데이터를 가져와서 mov2에 저장합니다.
 
+mov2 <- mov[ filt & filt2  ,    ]
 
 
 # ggplt으로 x=Genre, y=Gross...US 으로 만듭니다.
 # 5. 점으로 표현하는 geom_point()를 이용해서 차트를 그려보세요.
+p <- ggplot(data = mov2, aes(x=Genre, y=Gross...US))
 
-
-
+p + geom_point()
 # 6. 박스플롯으로 차트를 그려보세요.
-
-
+p + geom_boxplot()
 
 # 7. 위의 박스플롯과 더불어, 아웃라이어가 표시되도록, 분포를 점으로도 함께 나타내세요.
-
+p + geom_boxplot() + geom_jitter()
 
 
 # 8. 위의 차트에서, 점으로 표시한 jitter 에, 
 # 점의 사이즈를 조정하겠습니다. 
 # 점의 크기는 예산의 크기인 Budget...mill. 으로 설정합니다.
 
-
+p + geom_boxplot() + geom_jitter(aes(size=Budget...mill.))
 
 
 # 9. 위의 차트에서, 점으로 표시한 jitter 에 색깔은 스튜디오 컬럼으로 설정합니다.
 
-
+p + geom_boxplot() + geom_jitter(aes(size=Budget...mill. ,
+                                     color=Studio))
 
 
 # 10. 박스플롯의 투명도를 0.7 로 설정하여, 점들을 흐리게 표시합니다.
+q <- p + geom_jitter(aes(size=Budget...mill. ,
+                                     color=Studio)) +
+  geom_boxplot(alpha = 0.7)
 
-
-
+q
 # 11. x 레이블, y 레이블, 타이틀을 달아줍니다.
 # x레이블은 Genre 로, y 레이브른 Gross % US 로 , 타이틀은 Domestic Gross % by Genre
-
-
-
-
+q + xlab('Genre') + ylab('Gross % US') +
+  ggtitle('Domestic Gross % by Genre')
 
 # 12. 테마를 설정합니다.
 # x 레이블 글자는 파란색, 사이즈는 30
@@ -74,22 +89,24 @@ mov <- read.csv("21_ex-movie-Data.csv")
 # legend의 내용 글자 크기도 20
 # 폰트는 "Comic Sans MS"로 설정.
 
-
-
-
-
-
-
-
-
-
-
-
+q <- q + xlab('Genre') + ylab('Gross % US') +
+  ggtitle('Domestic Gross % by Genre') +
+  theme(axis.title.x = element_text(color = "blue", size=30),
+        axis.title.y = element_text(color = "blue", size=30),
+        axis.text.x = element_text(size=20),
+        axis.text.y = element_text(size=20),
+        
+        plot.title = element_text(size = 40),
+        legend.title = element_text(size = 20),
+        legend.text = element_text(size = 20))
 
 
 # label의 제목 이름 바꾸기.
+# Budget $M
 
+q$labels$size <- 'Budget $M'
 
+q
 
 
 
