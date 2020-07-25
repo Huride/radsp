@@ -43,7 +43,8 @@ dataset <- dataset[  ,  3:5]
 
 str(dataset)
 
-dataset$Purchased <- as.factor(dataset$Purchased)
+dataset$Purchased <- factor(dataset$Purchased, levels = 0:1,
+                            labels=0:1)
 
 str(dataset)
 
@@ -59,7 +60,29 @@ test_set[ , 1:2] <- scale(test_set[ , 1:2])
 
 summary(training_set)
 
+classifier <- glm(formula = Purchased ~ . ,
+                  family = binomial,
+                  data = training_set)
 
+y_pred <- predict(classifier, newdata = test_set[ , -3],
+                  type = 'response')
+y_pred
 
+summary(classifier)
 
+# 성능평가 : 분류의 문제!  => confusion matrix 
+
+y_pred <- ifelse(y_pred >= 0.5, 1, 0)
+y_pred
+
+results <- data.frame(test_set, y_pred)
+
+str(test_set)
+
+cm <- table(test_set$Purchased, y_pred)
+cm
+
+# 정확도 Accuracy 구하시오.
+(57+26)  / sum(cm)
+# 정확도는 0.83 ( 83% )
 
