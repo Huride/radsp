@@ -37,5 +37,29 @@ points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 
 
+dataset <- read.csv('Social_Network_Ads.csv')
+
+dataset <- dataset[  ,  3:5]
+
+str(dataset)
+
+dataset$Purchased <- as.factor(dataset$Purchased)
+
+str(dataset)
+
+library(caTools)
+set.seed(123)
+
+split <- sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set <- subset(dataset, split==T)
+test_set <- subset(dataset, split == F)
+
+training_set[ , 1:2] <- scale(training_set[  ,  1:2])
+test_set[ , 1:2] <- scale(test_set[ , 1:2])
+
+summary(training_set)
+
+
+
 
 
