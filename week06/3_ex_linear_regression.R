@@ -3,20 +3,27 @@
 
 # 1. Read in 'bikeshare.csv' file and set it to a dataframe called bike.
 
-bike <- 
+bike <- read.csv('bikeshare.csv')
 
 
 # 2. Check the head of bike
+head(bike)  
   
   
-  
-# 3. scatter plot of count vs temp. Set a good alpha value. (ggplot)
+# 3. scatter plot of count vs temp. Set a good alpha value. 
+# (ggplot)
+library(ggplot2)
+ggplot(bike, aes(x=temp, y=count)) + geom_point(aes(color=temp))
   
   
 # 4. 문자열 시간으로 되어있는 컬럼을, R이 처리할 수 있는 시간으로 바꾸세요.
 # hint : as.POSIXct(bike$datetime)
+str(bike)
+bike$datetime <- as.POSIXct(bike$datetime)
 
+str(bike)
 
+bike$weekday <- weekdays( bike$datetime )
 
 # 5. 다음은 그냥 실행하세요. 
 # 날짜별 쉐어링 카운트를 차트로 표시하는 코드.
