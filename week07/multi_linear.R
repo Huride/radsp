@@ -50,6 +50,7 @@ backwardElimination <- function(x, sl){
   return(summary(regressor))
 }
 
+backwardElimination(training_set, 0.05)
 
 
 
