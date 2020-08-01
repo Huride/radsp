@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 # Visualising the Training set results
 library(ElemStatLearn)
 set = training_set
@@ -36,3 +28,54 @@ plot(set[, -3], main = 'SVM (Test set)',
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
 points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
+
+
+
+
+dataset <- read.csv('Social_Network_Ads.csv')
+
+dataset <- dataset[ , 3:5]
+
+dataset$Purchased <- factor(dataset$Purchased,
+                            levels= 0:1)
+str(dataset)
+
+install.packages('caTools')
+library(caTools)
+set.seed(123)
+
+split <- sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set <- subset(dataset, split== T)
+test_set <- subset(dataset, split == F)
+
+training_set[ , -3] <- scale(training_set[ , -3])
+test_set[ , -3] <- scale(test_set[ , -3])
+
+summary(training_set)
+
+install.packages('e1071')
+library(e1071)
+
+classifier <- svm(formula = Purchased ~ . ,
+                  data = training_set,
+                  kernel = 'linear')
+
+y_pred <- predict(classifier, newdata = test_set[ , -3])
+
+y_pred
+
+results <- data.frame(test_set, y_pred)
+
+cm <- table(test_set$Purchased , y_pred)
+cm
+
+# accuracy 정확도
+(57+23) / sum(cm)
+# 정확도 0.8   ( 80% )
+
+
+
+
+
+
+
