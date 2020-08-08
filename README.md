@@ -10,8 +10,9 @@
 
 - 시험대비 1~3강 핵심포인트 자료 : https://drive.google.com/open?id=1mDVDTEhcqDAjhzUH95nijYI5B_dzp1-a158pKkmp-1A
 
-- 1~5강문제 : https://drive.google.com/file/d/13usT_Q0CsHSdrsUJmb66IfVv9JK5UjFR/view?usp=sharing
+- 시험대비 4~5강 핵심포인트 자료 : https://drive.google.com/open?id=1lJJIioVL7f6C71IOsOy5x-PivJfWGJMatfDg9Swu9Ss
 
+- 1~5강문제 : https://drive.google.com/file/d/13usT_Q0CsHSdrsUJmb66IfVv9JK5UjFR/view?usp=sharing
 
 
 ### R 라이브러리 설치가 안될때 (한글 경로가 아닌데도 안되는 경우)
