@@ -6,6 +6,12 @@
 
 - 데이터마이닝 기출문제 : https://drive.google.com/open?id=1_zPyy5MS-4qCPRSM6C075U13wqCC3Afcp64Efht1fVs
 
+- 딥러닝 기초 : https://drive.google.com/open?id=1TdlnkFU4Zukw2ajdxm7HE8BQts0pdoP_1RDc6XDKZmg
+
+- 시험대비 1~3강 핵심포인트 자료 : https://drive.google.com/open?id=1mDVDTEhcqDAjhzUH95nijYI5B_dzp1-a158pKkmp-1A
+
+- 1~5강문제 : https://drive.google.com/file/d/13usT_Q0CsHSdrsUJmb66IfVv9JK5UjFR/view?usp=sharing
+
 
 
 ### R 라이브러리 설치가 안될때 (한글 경로가 아닌데도 안되는 경우)
