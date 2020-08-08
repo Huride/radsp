@@ -14,6 +14,10 @@
 
 - 1~5강문제 : https://drive.google.com/file/d/13usT_Q0CsHSdrsUJmb66IfVv9JK5UjFR/view?usp=sharing
 
+- 16회 기출문제 : https://drive.google.com/open?id=1q8eWGbpfHsSGWjupXsp1zm94K0S4JsGm
+
+- 17회 기출문제 : https://drive.google.com/open?id=1xuW09u9m6Zd8w0nsPlcuxfSMQQ2oD73H
+
 
 ### R 라이브러리 설치가 안될때 (한글 경로가 아닌데도 안되는 경우)
 
