@@ -14,10 +14,23 @@
 
 - 1~5강문제 : https://drive.google.com/file/d/13usT_Q0CsHSdrsUJmb66IfVv9JK5UjFR/view?usp=sharing
 
+- 1~5장 문제 정답 : https://drive.google.com/file/d/1sId8j9kM4tWa4Y11aMPKvC-RAxv8_LRh/view?usp=sharing
+
+- 시험대비 7장 핵심포인트 자료 : https://drive.google.com/open?id=1hgYBxmv9I_p4iI5NZa-zggQXUzSbEWaoZ5Io6oG4ofc
+
+- 시험대비 8장 핵심포인트 자료 : https://drive.google.com/open?id=1l6nYMW2aBJDXIVffPUHC-2haRFA2InRY-FVoA1QjnCk
+
 - 16회 기출문제 : https://drive.google.com/open?id=1q8eWGbpfHsSGWjupXsp1zm94K0S4JsGm
 
 - 17회 기출문제 : https://drive.google.com/open?id=1xuW09u9m6Zd8w0nsPlcuxfSMQQ2oD73H
 
+- 18~19회 기출문제 : https://drive.google.com/open?id=1X231irOQ50McuXNlWGr0fLmPB7Ut_gh5
+
+- 20~21회 기출문제 : https://drive.google.com/open?id=19b_wPF4UEKWa9lsDM3q_dOo2Yc1PZP65
+
+- 22~23회 기출문제 : https://drive.google.com/open?id=19P4YQDXKN5z3xiSNEp6GR4CYGi_XV-an
+
+- 기출문제 정답 (16회 ~ 23회) : https://drive.google.com/open?id=1pkgcgUlWCZ_WAzvL-Fi8ekxRjC3hUBrW
 
 ### R 라이브러리 설치가 안될때 (한글 경로가 아닌데도 안되는 경우)
 
